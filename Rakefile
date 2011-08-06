@@ -6,4 +6,5 @@
 require 'rake/dsl_definition'
 
 require 'rake'
+Iconsign::Application.load_tasks
 
