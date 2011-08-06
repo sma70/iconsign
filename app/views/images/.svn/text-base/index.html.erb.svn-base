@@ -1,0 +1,15 @@
+<div id="mng_img">
+<h1>All Images</h1>
+<ul class="item_listing">
+<% for image in @images %>
+    <li><%= image_tag image.picture.url(:thumb) %>
+        <p>
+                <%= link_to 'Edit', edit_image_path(image) %> |
+                <%= link_to 'Destroy', image, :confirm => 'Are you sure?', :method => :delete %>     
+        </p>
+    </li>
+<% end %>
+</ul>
+</div>
+
+

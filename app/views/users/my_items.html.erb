@@ -1,0 +1,46 @@
+<h1> My Consigned Items </h1>
+<% if @my_items.size > 0 %>
+<h2> Summary: </h2>
+<table class="item_summary">
+	<tr><td>Number of items: <%= @my_items.count %></td></tr>
+	<tr>
+		<td>Number of items sold: <%= @num_items_sold %></td>
+	</tr>
+	<tr><td>Total amount earned: <%= number_to_currency(@total_amount_earned) %></td></tr>
+</table>
+<% end %>
+
+<br />
+<%= button_to "Start New Consignment", new_item_path(), :method => :get %>
+<br />
+
+<% if @my_items.size > 0 %>
+<table class="manage_table" id="my_items">
+<thead>
+  <tr>
+    <th>Item Name</th>
+    <th>Price</th>
+  	<th>Your return</th>
+  	<th>Edit</th>
+  	<th>Status</th>
+  </tr>
+</thead>
+<tbody>
+<% @my_items.each do |item| %>
+  <tr>
+    <td><%= link_to item.name, item %></td>
+  	<td><%= number_to_currency(item.price) %></td>
+  	<td><%= number_to_currency(item.price/2) %></td>
+  	<td>
+  		<% if item.item_status_id == 1%>
+  		  <%= link_to image_tag("icons/edit.png"), edit_item_path(item) %>
+  		<% end %>
+    </td>
+  	<td><%= item.status %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+<% else %>
+  <p>You have not created an item yet.</p>
+<% end %>

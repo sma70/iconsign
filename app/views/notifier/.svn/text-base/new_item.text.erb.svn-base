@@ -1,0 +1,6 @@
+Hi <%= @admin.first_name%> <%= @admin.last_name%>,
+
+There is a new consignment item pending approval:
+<%= @item.name %>
+
+Please review the item on iConsign.

@@ -1,0 +1,14 @@
+<%= render 'form' %>
+
+
+<h1>Search Result</h1>
+
+	
+<% if @search_results.empty? %>
+  No products found
+<% else %>
+  <% @search_results.each do |item| %>
+    <%= link_to item.name, item_url(item)%> 
+    <br />
+  <% end %>
+<% end %>

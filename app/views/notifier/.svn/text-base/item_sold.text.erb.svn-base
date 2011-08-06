@@ -1,0 +1,10 @@
+Hi <%= @item.user.first_name %> <%= @item.user.last_name %>,
+
+Congratulations, your item has been sold!
+
+Consignment item:
+<%= @item.name %>
+
+Thank you for letting us sell your item for you!
+
+Please visit the iConsign Store for more information.

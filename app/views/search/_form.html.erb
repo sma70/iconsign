@@ -1,0 +1,11 @@
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "autocomplete"%>
+<% end %>
+
+<h3>Search Items by Tag</h3>
+     
+<%= form_tag(:controller => "search", :action => "index", :method => "get") do %>
+    <%= text_field_tag(:SearchInput) %>
+    <%#= submit_tag("Search") %>
+    <%= image_submit_tag("icons/searchglass.png") %>
+<% end %>

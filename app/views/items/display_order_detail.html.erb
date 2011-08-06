@@ -1,0 +1,28 @@
+<h2>Order Information</h2>
+
+<table class="catalog">
+<% @items.each do |item| %>
+  <tr>
+    <td>
+        <div class="image">
+        	<% if item.images.first != nil%>
+              <% img_thumb = item.images.first%>
+              <%= link_to (image_tag img_thumb.picture.url(:thumb)), item %>
+            <% end %>
+        </div>
+    </td>
+    <td>
+        <div class="name">
+            <%= link_to item.name, item %>
+        </div>
+        <div class="description">
+            <%=h item.description %>
+        </div>
+        <div class="price">
+            <%= number_to_currency(item.price) %>
+        </div>
+        <br />
+    </td>
+  </tr>
+<% end %>
+</table>

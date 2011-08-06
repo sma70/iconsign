@@ -1,0 +1,130 @@
+<div id ="mng_order">
+	
+<h1>Listing orders</h1>
+<% if @received_orders.size != 0 %>
+<h3>Payment Received</h3>
+<table class="manage_table" id="admin_orders1">
+	<thead>
+		<tr>
+			<th>Order ID</th>
+			<th>Order Date</th>
+			<th>Total</th>
+			<th>Edit</th>
+		</tr>
+	</thead>
+
+	<tbody>
+	  <% @received_orders.each do |order| %>
+		<tr>
+			<td><%= link_to order.id, :controller => "items", :action => "display_order_detail", :order_id => order %></td>
+			<td><%= order.order_date %></td>
+			<td><%= number_to_currency(order.amount)%></td>
+			<td><%= link_to image_tag("icons/edit.png"), edit_order_path(order) %></td>
+		</tr>
+	  <% end %>
+	</tbody>
+</table>
+<% end %>
+
+<% if @completed_orders.size != 0 %>
+
+<h3>Completed</h3>
+<table class="manage_table" id="admin_orders2">
+	<thead>
+		<tr>
+			<th>Order ID</th>
+			<th>Order Date</th>
+			<th>Total</th>
+			<th>Edit</th>
+		</tr>
+	</thead>
+	<tbody>
+	  <% @completed_orders.each do |order| %>
+		<tr>
+			<td><%= link_to order.id, :controller => "items", :action => "display_order_detail", :order_id => order %></td>
+			<td><%= order.order_date %></td>
+			<td><%= number_to_currency(order.amount)%></td>
+			<td><%= link_to image_tag("icons/edit.png"), edit_order_path(order) %></td>
+		</tr>
+	  <% end %>
+	</tbody>
+</table>
+<% end %>
+
+<% if @processing_orders.size != 0 %>
+
+<h3>Processing</h3>
+<table class="manage_table" id="admin_orders3">
+	<thead>
+		<tr>
+			<th>Order ID</th>
+			<th>Order Date</th>
+			<th>Total</th>
+			<th>Edit</th>
+		</tr>
+	</thead>
+	<tbody>
+      <% @processing_orders.each do |order| %>
+		<tr>
+			<td><%= link_to order.id, :controller => "items", :action => "display_order_detail", :order_id => order %></td>
+			<td><%= order.order_date %></td>
+			<td><%= number_to_currency(order.amount)%></td>
+			<td><%= link_to image_tag("icons/edit.png"), edit_order_path(order) %></td>
+		</tr>
+	  <% end %>
+	</tbody>
+</table>
+<% end %>
+
+<% if @waiting_for_payment_orders.size != 0 %>
+
+<h3>Waiting for Payment</h3>
+<table class="manage_table" id="admin_orders4">
+	<thead>
+		<tr>
+			<th>Order ID</th>
+			<th>Order Date</th>
+			<th>Total</th>
+			<th>Edit</th>
+		</tr>
+	</thead>
+	<tbody>
+	  <% @waiting_for_payment_orders.each do |order| %>
+		<tr>
+			<td><%= link_to order.id, :controller => "items", :action => "display_order_detail", :order_id => order %></td>
+			<td><%= order.order_date %></td>
+			<td><%= number_to_currency(order.amount)%></td>
+			<td><%= link_to image_tag("icons/edit.png"), edit_order_path(order) %></td>
+		</tr>
+      <% end %>
+	</tbody>
+</table>
+<% end %>
+
+<% if @shipped_orders.size != 0 %>
+<h3>Shipped</h3>
+<table class="manage_table" id="admin_orders5">
+	<thead>
+		<tr>
+			<th>Order ID</th>
+			<th>Order Date</th>
+			<th>Shipment Date</th>
+			<th>Total</th>
+			<th>Edit</th>
+		</tr>
+	</thead>
+	<tbody>
+	  <% @shipped_orders.each do |order| %>
+		<tr>
+			<td><%= link_to order.id, :controller => "items", :action => "display_order_detail", :order_id => order %></td>
+			<td><%= order.order_date %></td>
+			<td><%= order.ship_date %></td>
+			<td><%= number_to_currency(order.amount)%></td>
+			<td><%= link_to image_tag("icons/edit.png"), edit_order_path(order) %></td>
+		</tr>
+      <% end %>
+	</tbody>
+</table>
+<% end %>
+
+</div>

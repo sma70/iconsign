@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  description: MyText
+  price: 9.99
+  start_date: 2011-07-12
+  expiry_date: 2011-07-12
+  consignor: 
+  item_status: 
+  item_category: 
+
+two:
+  name: MyString
+  description: MyText
+  price: 9.99
+  start_date: 2011-07-12
+  expiry_date: 2011-07-12
+  consignor: 
+  item_status: 
+  item_category: 

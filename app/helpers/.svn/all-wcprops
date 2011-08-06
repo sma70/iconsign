@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/CMPT470-1114-group1/!svn/ver/366/project/iconsign/app/helpers
+END
+orders_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/CMPT470-1114-group1/!svn/ver/162/project/iconsign/app/helpers/orders_helper.rb
+END
+tags_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/CMPT470-1114-group1/!svn/ver/236/project/iconsign/app/helpers/tags_helper.rb
+END
+items_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/CMPT470-1114-group1/!svn/ver/273/project/iconsign/app/helpers/items_helper.rb
+END
+users_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/CMPT470-1114-group1/!svn/ver/156/project/iconsign/app/helpers/users_helper.rb
+END
+application_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/CMPT470-1114-group1/!svn/ver/320/project/iconsign/app/helpers/application_helper.rb
+END
+comments_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/CMPT470-1114-group1/!svn/ver/366/project/iconsign/app/helpers/comments_helper.rb
+END
+sessions_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/CMPT470-1114-group1/!svn/ver/221/project/iconsign/app/helpers/sessions_helper.rb
+END
+home_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/CMPT470-1114-group1/!svn/ver/155/project/iconsign/app/helpers/home_helper.rb
+END
+cart_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/CMPT470-1114-group1/!svn/ver/183/project/iconsign/app/helpers/cart_helper.rb
+END
+item_statuses_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/CMPT470-1114-group1/!svn/ver/251/project/iconsign/app/helpers/item_statuses_helper.rb
+END
+carts_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/CMPT470-1114-group1/!svn/ver/203/project/iconsign/app/helpers/carts_helper.rb
+END

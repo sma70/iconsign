@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/CMPT470-1114-group1/!svn/ver/121/project/iconsign/config/initializers
+END
+inflections.rb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/CMPT470-1114-group1/!svn/ver/121/project/iconsign/config/initializers/inflections.rb
+END
+session_store.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/CMPT470-1114-group1/!svn/ver/121/project/iconsign/config/initializers/session_store.rb
+END
+secret_token.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/CMPT470-1114-group1/!svn/ver/121/project/iconsign/config/initializers/secret_token.rb
+END
+backtrace_silencers.rb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/CMPT470-1114-group1/!svn/ver/121/project/iconsign/config/initializers/backtrace_silencers.rb
+END
+mime_types.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/CMPT470-1114-group1/!svn/ver/121/project/iconsign/config/initializers/mime_types.rb
+END

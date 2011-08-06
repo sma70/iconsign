@@ -1,0 +1,141 @@
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "localstorage" %>
+<% end %>
+
+<h1 id="title"><%= @item.name %></h1>
+<div id="item_left">
+	<div class="main_img">
+		<%# if item.images.first != nil%>
+		<%= image_tag @item.images.first.picture.url(:medium) %>
+		<%# end %>
+	</div>
+	
+	<div class="sub_img">
+	<% if @item.images.size > 1 %>
+		<ul class="thumbnails">
+		<% @item.images.each do |image| %>
+			<li><%= image_tag image.picture.url(:thumb) %></li>
+			<!-- li--><%#= link_to(image_tag(image.picture.url(:thumb)), image.picture.url(:medium)) %><!--/li-->
+		<% end %>
+		</ul>
+	<% end %>
+	</div>	
+</div>
+
+<table id="item_info" class="table_display" width=250>
+	<tr>
+		<td><b>Status</b</td>
+		<td><%= @item.item_status.status %></td>
+	</tr>
+	<% unless @item.start_date == nil %>
+	<tr>
+		<td><b>Start Date</b</td>
+		<td><%= @item.start_date.to_date %></td>
+	</tr>
+	<% end %>
+	<% unless @item.expiry_date == nil %>
+	<tr>
+		<td><b>Expiry Date</b</td>	
+		<td><%= @item.expiry_date.to_date %></td>
+	</tr>
+	<% end %>
+	<tr>
+		<td><b>Price</b></td>
+		<% unless @item.item_status.id==3 %>
+			<td><%= number_to_currency(@item.price) %></td>
+		<% else %>
+		<td>This item is free!</td>
+		<% end %>
+	</tr>
+	
+	<tr>
+	    <td><b>Tagged with</b><td> 
+	   	<% for tag in @item.tags %> 
+          <%= link_to tag.name, search_index_path(:SearchInput => tag.name) %>
+        <% end %>
+	</tr>
+	
+	<tr>
+		<td><% if current_user and (current_user.role_id == 1 or (current_user.id == @item.user_id and @item.item_status_id == 1)) %>
+	 		 <%= link_to 'Edit', edit_item_path(@item) %>
+	    </td>
+	    <td>
+	    <% end %>
+	 		<%= link_to 'Back', items_path %>
+	 	</td>
+    </tr>
+
+	<tr>
+		<td colspan=2>
+		<%= form_for @item, :url => {:controller => :carts, :action => :add} do |f| %>
+		  <% if (@item.item_status.id == 2 or @item.item_status.id == 3) and (current_user == nil or (current_user and (current_user.id != @item.user_id and current_user.role_id != 1))) %> 
+		    <%#= button_to "Add to Cart", :controller => :carts, :action => :add, :id => @item %>
+
+		    <button type="submit" class="large primary" id="add-to-cart-button">
+			  	<%= image_tag('icons/add-to-cart.png') + t('add_to_cart') %>
+		    </button>
+		  
+		  <% end %>
+		<% end %>
+		</td>
+	</tr>
+</table>
+
+<div id = "item_desc">
+<table>
+	<tr>
+	<td>
+		<h2>Description</h2>
+		<p><%= @item.description %></p>
+	</td>
+	</tr>
+</table>
+</div>
+
+
+<table id="comments">
+	<tr>
+	<td>
+		<% @item.comments.each do |comment| %>
+	  	<h2>Comments</h2>
+	  	<% @user = User.find(comment.user_id) %>
+	  	<p>
+	    	<% if @user.role_id == 1 %>
+	    		<b><%= @user.first_name %> (iConsign Administrator):</b>
+	  		<% elsif @user.role_id == 2 and @item.user_id == @user.id %>
+	    		<b><%= @user.first_name %> (Consignor):</b>
+	    	<% else %>
+	    		<b><%= @user.first_name %>:</b>
+	    	<% end %>
+	    	<%= comment.body %>
+	  	</p>
+	  	<p>
+	  		<% if current_user && (current_user.role_id == 1 || current_user.id == @item.user_id) %>
+	  			  <%= link_to 'Delete Comment', [comment.item, comment], :confirm => 'Are you sure?', :method => :delete %>
+	  		<% else %>
+	  			<%= link_to "Flag as Inapproriate", notify_admin_comment_path(comment), :confirm => "Flag comment as inapproriate?" %>
+	  		<% end %>
+	  	</p>
+		<% end %>
+	</td>
+	</tr>
+	
+	<tr>
+		<td>
+		<% if current_user %>
+			<h2>Add a comment:</h2>
+			<%= form_for([@item, @item.comments.build]) do |f| %>
+	  		<div class="field">
+	    		<%= f.text_area :body, :rows => 10, :cols => 80 %>
+	  		</div>
+	  		<div class="actions">
+	    		<%= f.submit %>
+	  		</div>
+	  		<% end %>
+		<% end %>
+	  </td>
+	</tr>
+</table>
+
+
+	

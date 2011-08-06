@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/CMPT470-1114-group1/!svn/ver/367/project/iconsign/test/fixtures
+END
+items.yml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/CMPT470-1114-group1/!svn/ver/147/project/iconsign/test/fixtures/items.yml
+END
+users.yml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/CMPT470-1114-group1/!svn/ver/147/project/iconsign/test/fixtures/users.yml
+END
+item_categories.yml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/CMPT470-1114-group1/!svn/ver/147/project/iconsign/test/fixtures/item_categories.yml
+END
+roles.yml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/CMPT470-1114-group1/!svn/ver/147/project/iconsign/test/fixtures/roles.yml
+END
+comments.yml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/CMPT470-1114-group1/!svn/ver/367/project/iconsign/test/fixtures/comments.yml
+END
+images.yml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/CMPT470-1114-group1/!svn/ver/147/project/iconsign/test/fixtures/images.yml
+END
+order_statuses.yml
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/CMPT470-1114-group1/!svn/ver/147/project/iconsign/test/fixtures/order_statuses.yml
+END
+provinces.yml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/CMPT470-1114-group1/!svn/ver/147/project/iconsign/test/fixtures/provinces.yml
+END
+item_statuses.yml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/CMPT470-1114-group1/!svn/ver/147/project/iconsign/test/fixtures/item_statuses.yml
+END
+carts.yml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/CMPT470-1114-group1/!svn/ver/147/project/iconsign/test/fixtures/carts.yml
+END
+addresses.yml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/CMPT470-1114-group1/!svn/ver/147/project/iconsign/test/fixtures/addresses.yml
+END
+orders.yml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/CMPT470-1114-group1/!svn/ver/147/project/iconsign/test/fixtures/orders.yml
+END
+tags.yml
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/CMPT470-1114-group1/!svn/ver/147/project/iconsign/test/fixtures/tags.yml
+END

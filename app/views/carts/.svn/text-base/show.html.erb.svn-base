@@ -1,0 +1,50 @@
+<h1>Your Cart</h1>
+
+<% if @cart.items.empty? %>
+    <p>Your Cart is empty.</p>
+<% else %>
+	<p>Your have <%=pluralize(@cart.items.size, 'item')%> in your cart.</p>
+	<table class="manage_table">
+		<tr>
+	        <th class="legend"></th>
+	        <th class="legend">Item</th>
+	        <th class="legend">Price</th>
+	        <th class="legend">Status</th>
+	        <th class="legend"></th>
+	    </tr>
+		<% @cart.items.each do |item| %>
+	    <tr>
+	        <td>
+	            <div class="image">
+		        	<% if item.images.first != nil%>
+			            <% img_thumb = item.images.first%>
+			            <%= link_to (image_tag img_thumb.picture.url(:thumb)), item %>
+		            <%end%>
+	            </div>
+	        </td>
+	        <td class="name"><%= link_to item.name, item %></td>
+	        <td class="price"><%= number_to_currency(item.price) %></td>
+	        <td class="status"><%= item.status %></td>
+	       	<td>
+	       		<%= button_to 'Remove', :controller => :carts, :action =>:remove, :id => item %>
+	    	</td>
+	    </tr>
+		<% end %>
+		
+	    <tr>
+	        <td colspan="4">
+	            <div class="total">Total:</div>
+	        </td>
+	        <td>
+	            <div class="price"><%= number_to_currency(@cart.total_price) %></div>
+	        </td>
+	    </tr>
+	</table>
+	<br/>
+	<%= button_to 'Empty Cart', @cart, :method => :delete, :confirm => 'Are you sure?' %>
+	<%= button_to "Checkout", checkout_url, :method => :get %>
+
+<%end%>
+
+<br/>
+<%= link_to 'Back', items_path %>

@@ -1,0 +1,23 @@
+<h1>User: <%= @user.first_name %> <%= @user.last_name %></h1>
+
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @user.phone %>
+</p>
+
+<% if @user.role_id == 2 %>
+  <p>
+  <b>Address:</b>
+  <%= @user.address %><br />
+  </p>
+  <br />
+  <%= link_to 'Back', root_url %>
+<% else %>
+  <br />
+  <%= link_to 'Back', users_url %>
+<% end %>

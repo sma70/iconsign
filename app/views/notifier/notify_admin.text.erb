@@ -1,0 +1,16 @@
+Hi <%= @admin.first_name%> <%= @admin.last_name%>,
+
+The following comment has been flagged as inapproriate.  
+Please review the comment.
+
+Commenter: <%= @commenter.first_name %> <%= @commenter.last_name %>
+Commenter's Email: <%= @commenter.email %>
+
+Comment:
+<%= @comment.body %>
+
+Item # <%= @comment.item.id %>: <%= @comment.item.name %>
+
+
+
+

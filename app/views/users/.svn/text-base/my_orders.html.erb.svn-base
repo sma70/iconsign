@@ -1,0 +1,25 @@
+<h1>My Orders</h1>
+<% if @my_orders.size > 0 %>
+  <table class="manage_table" id="my_orders">
+    <thead>
+    <tr>
+      <th>Order Number</th>
+      <th>Order Date</th>
+      <th>Order Status</th>
+      <th>Total</th>
+    </tr>
+    </thead>
+   	<tbody>
+  	<% @my_orders.each do |order| %>
+    <tr>
+      <td><%= link_to order.id, :controller => "items", :action => "display_order_detail", :order_id => order %></td>
+      <td><%= order.order_date.to_date %></td>
+      <td><%= order.status %></td>
+      <td><%= number_to_currency(order.amount) %></td>
+    </tr>
+  <% end %>
+  </tbody>
+  </table>
+<% else %>
+  <p>You have not placed an order.</p>
+<% end %>

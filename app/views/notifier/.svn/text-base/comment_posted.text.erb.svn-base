@@ -1,0 +1,10 @@
+Hi <%= @comment.item.user.first_name %> <%= @comment.item.user.last_name %>,
+
+<%= @commenter.first_name %> commented on your consignment item:
+<%= @comment.item.name %>
+
+<%= @commenter.first_name %>:
+<%= @comment.body %>
+
+Please visit the iConsign Store to check your item and view the comment.
+

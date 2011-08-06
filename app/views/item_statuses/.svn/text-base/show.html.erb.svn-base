@@ -1,0 +1,13 @@
+<fieldset>
+	<legend>Item Status</legend>
+	<p>
+		<label for="status">Status: </label>
+		<%= @item_status.status %>
+	</p>
+
+</fieldset>
+
+<fieldset>
+	<%= link_to 'Edit', edit_item_status_path(@item_status) %> |
+	<%= link_to 'Back', item_statuses_path %>
+</fieldset>

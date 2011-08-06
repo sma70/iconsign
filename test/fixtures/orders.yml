@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  order_date: 2011-07-12
+  ship_date: 2011-07-12
+  amount: 9.99
+  user: 
+  address: 
+  order_status: 
+
+two:
+  order_date: 2011-07-12
+  ship_date: 2011-07-12
+  amount: 9.99
+  user: 
+  address: 
+  order_status: 

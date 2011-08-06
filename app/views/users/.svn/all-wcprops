@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/CMPT470-1114-group1/!svn/ver/535/project/iconsign/app/views/users
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/CMPT470-1114-group1/!svn/ver/428/project/iconsign/app/views/users/edit.html.erb
+END
+my_items.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/CMPT470-1114-group1/!svn/ver/518/project/iconsign/app/views/users/my_items.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/CMPT470-1114-group1/!svn/ver/522/project/iconsign/app/views/users/index.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/CMPT470-1114-group1/!svn/ver/535/project/iconsign/app/views/users/new.html.erb
+END
+admin_main.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/CMPT470-1114-group1/!svn/ver/440/project/iconsign/app/views/users/admin_main.html.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/CMPT470-1114-group1/!svn/ver/505/project/iconsign/app/views/users/show.html.erb
+END
+_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/CMPT470-1114-group1/!svn/ver/535/project/iconsign/app/views/users/_form.html.erb
+END
+update.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/CMPT470-1114-group1/!svn/ver/156/project/iconsign/app/views/users/update.html.erb
+END
+my_orders.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/CMPT470-1114-group1/!svn/ver/517/project/iconsign/app/views/users/my_orders.html.erb
+END

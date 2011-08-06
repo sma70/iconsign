@@ -1,0 +1,16 @@
+<h1>Admin Main Page</h1>
+<% if @pending_items.size > 0 %>
+  <p>New items are waiting for approvals. 
+  <%= link_to 'Manage New Items Now', :controller => 'items', :action => 'manage_items' %>
+  </p>
+<% else %>
+  <p>No new items require approvals.</p>
+<% end %>
+<br />
+<% if @received_orders.size > 0 or @completed_orders.size > 0 %>
+  <p>Some orders need to ship or have been shipped. 
+  <%= link_to 'Manage Orders Now', :controller => 'items', :action => 'manage_items' %></p>
+<% else %>
+  <p>No orders require your attention.</p>
+<% end %>
+<br />

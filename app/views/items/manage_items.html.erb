@@ -1,0 +1,142 @@
+<div id="mng_item">
+
+<h1>All Items</h1>
+<% if @pending_items.size != 0 %>
+  <h3>Pending</h3>
+  <table class="manage_table" id="admin_items1">
+  	<thead>
+      <tr>
+        <th>Item ID</th>
+        <th>Item Name</th>
+        <th>Price</th>
+        <th>Create Date</th>
+        <th>Consignor</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @pending_items.each do |item| %>
+      <tr>
+        <td><%= link_to item.id, item %></td>
+        <td><%= item.name %></td>
+        <td><%= number_to_currency(item.price) %></td>
+        <td><%= item.created_at.to_date %></td>
+        <td><%= item.user.full_name %></td>
+  	    <td><%= link_to image_tag("icons/edit.png"), edit_item_path(item) %></td>
+  	    <td><%= link_to image_tag("icons/delete.png"), item, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<% if @for_sale_items.size != 0 %>
+  <h3>For Sale</h3>
+  <table class="manage_table" id="admin_items2">
+  	<thead>
+      <tr>
+        <th>Item ID</th>
+        <th>Item Name</th>
+        <th>Price</th>
+        <th>Start Date</th>
+        <th>Expiry Date</th>
+        <th>Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @for_sale_items.each do |item| %>
+      <tr>
+        <td><%= link_to item.id, item %></td>
+        <td><%= item.name %></td>
+        <td><%= number_to_currency(item.price) %></td>
+        <td><%= item.start_date %></td>
+        <td><%= item.expiry_date %></td>
+  	    <td><%= link_to image_tag("icons/edit.png"), edit_item_path(item) %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<% if @free_items.size != 0 %>
+  <h3>Free</h3>
+  <table class="manage_table" id="admin_items3">
+  	<thead>
+      <tr>
+        <th>Item ID</th>
+        <th>Item Name</th>
+        <th>Expiry Date</th>
+        <th>Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @free_items.each do |item| %>
+      <tr>
+        <td><%= link_to item.id, item %></td>
+        <td><%= item.name %></td>
+        <td><%= item.expiry_date %></td>
+  	    <td><%= link_to image_tag("icons/edit.png"), edit_item_path(item) %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<% if @claimed_items.size != 0 %>
+  
+  <h3>Claimed</h3>
+  <table class="manage_table" id="admin_items4">
+  	<thead>
+      <tr>
+        <th>Item ID</th>
+        <th>Item Name</th>
+        <th>Claim Date</th>
+        <th>Claimed By</th>
+        <th>Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @claimed_items.each do |item| %>
+      <tr>
+        <td><%= link_to item.id, item %></td>
+        <td><%= item.name %></td>
+        <td><%= item.order.order_date %></td>
+        <td><%= item.order.user.full_name %></td>
+  	    <td><%= link_to image_tag("icons/edit.png"), edit_item_path(item) %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<% if @sold_items.size != 0 %>
+  
+  <h3>Sold</h3>
+  <table class="manage_table" id="admin_items5">
+  	<thead>
+      <tr>
+        <th>Item ID</th>
+        <th>Item Name</th>
+        <th>Price</th>
+        <th>Sold Date</th>
+        <th>Sold To</th>
+        <th>Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @sold_items.each do |item| %>
+      <tr>
+        <td><%= link_to item.id, item %></td>
+        <td><%= item.name %></td>
+        <td><%= number_to_currency(item.price) %></td>
+        <td><%= item.order.order_date%></td>
+        <td><%= item.order.user.full_name %></td>
+  	    <td><%= link_to image_tag("icons/edit.png"), edit_item_path(item) %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+</div>

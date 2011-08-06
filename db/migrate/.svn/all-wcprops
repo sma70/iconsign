@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/CMPT470-1114-group1/!svn/ver/367/project/iconsign/db/migrate
+END
+20110727211656_acts_as_taggable_on_migration.rb
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/CMPT470-1114-group1/!svn/ver/324/project/iconsign/db/migrate/20110727211656_acts_as_taggable_on_migration.rb
+END
+20110712081032_create_item_categories.rb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/CMPT470-1114-group1/!svn/ver/147/project/iconsign/db/migrate/20110712081032_create_item_categories.rb
+END
+20110712075403_create_orders.rb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/CMPT470-1114-group1/!svn/ver/147/project/iconsign/db/migrate/20110712075403_create_orders.rb
+END
+20110729022836_create_comments.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/CMPT470-1114-group1/!svn/ver/367/project/iconsign/db/migrate/20110729022836_create_comments.rb
+END
+20110712074924_create_item_statuses.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/CMPT470-1114-group1/!svn/ver/147/project/iconsign/db/migrate/20110712074924_create_item_statuses.rb
+END
+20110712073055_create_users.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/CMPT470-1114-group1/!svn/ver/249/project/iconsign/db/migrate/20110712073055_create_users.rb
+END
+20110712075057_create_items_tags.rb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/CMPT470-1114-group1/!svn/ver/161/project/iconsign/db/migrate/20110712075057_create_items_tags.rb
+END
+20110712075514_create_order_statuses.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/CMPT470-1114-group1/!svn/ver/240/project/iconsign/db/migrate/20110712075514_create_order_statuses.rb
+END
+20110712074253_create_provinces.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/CMPT470-1114-group1/!svn/ver/256/project/iconsign/db/migrate/20110712074253_create_provinces.rb
+END
+20110712075905_create_images.rb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/CMPT470-1114-group1/!svn/ver/255/project/iconsign/db/migrate/20110712075905_create_images.rb
+END
+20110712073710_create_addresses.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/CMPT470-1114-group1/!svn/ver/254/project/iconsign/db/migrate/20110712073710_create_addresses.rb
+END
+20110712074347_create_carts.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/CMPT470-1114-group1/!svn/ver/147/project/iconsign/db/migrate/20110712074347_create_carts.rb
+END
+20110712073242_create_roles.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/CMPT470-1114-group1/!svn/ver/147/project/iconsign/db/migrate/20110712073242_create_roles.rb
+END
+20110712074717_create_carts_items.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/CMPT470-1114-group1/!svn/ver/161/project/iconsign/db/migrate/20110712074717_create_carts_items.rb
+END
+20110712074623_create_items.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/CMPT470-1114-group1/!svn/ver/261/project/iconsign/db/migrate/20110712074623_create_items.rb
+END

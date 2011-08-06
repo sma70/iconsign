@@ -1,0 +1,7 @@
+<fieldset>
+	<legend>Item_status</legend>
+	<p>
+		<label for="status">Status: </label>
+		<%= text_field :item_status, :status,  :value => @item_status.status %>
+	</p>
+</fieldset>

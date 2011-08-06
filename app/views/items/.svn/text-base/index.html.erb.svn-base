@@ -1,0 +1,43 @@
+<%content_for :javascript_includes do %>
+  <%= javascript_include_tag "localstorage"%>
+<% end %>
+
+<div id="sidebar" class="container">
+	<%= render 'search/form' %>
+	<div class="sidebar_item">
+		<h3 class="side_title">About iConsign</h3>
+		<ul>
+			<li><%= link_to "Contact Us", about_path %></li>
+			<li><%= link_to "How iConsign Works", about_path %></li>
+		</ul>
+		
+	</div>
+	<div id="most_viewed" class="sidebar_item"></div>
+</div>
+
+<div class="catalog" id="item_catalog">
+		 
+<ul class="item_listing" >
+	<% for item in @items %>
+	  <% if item.item_status_id == 2 or item.item_status_id == 3 %> 
+      <li>
+        <% if item.images.first != nil%>
+	            <% img_thumb = item.images.first%>
+	            <%= link_to (image_tag img_thumb.picture.url(:thumb)), item %>
+        <%end%>
+        <%= link_to item.name, item %>
+        <p>
+          <span class="price"><%= number_to_currency(item.price) %>
+        </p>
+      </li>
+      <% end %>
+    <% end %>
+</ul>
+
+</div>
+
+<% if session[:login] == 1 %>
+	<p><%= link_to 'New item', new_item_path %></p>
+<% end %>
+
+

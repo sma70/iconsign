@@ -1,0 +1,77 @@
+<%= form_for(@user) do |f| %>
+  <h3>Account Information:</h3>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      <ul>
+    </div>
+  <% end %>  
+  
+  
+  <div class="field">
+  	<%= f.label :Email  %>&nbsp;<span class="required">*</span><br />
+  	<%= f.text_field :email %>
+ </div>
+  	
+  	<div>
+  		<%= f.label :Password %>&nbsp;<span class="required">*</span><br />
+  		<%= f.password_field :password %>
+  	</div>
+  	
+  	<div>
+  		<%= f.label :password_confirmation %>&nbsp;<span class="required">*</span><br />
+  		<%= f.password_field :password_confirmation %>
+  	</div>
+  	
+   	<div>
+  		<%= f.label :First_name %>&nbsp;<span class="required">*</span><br />
+  		<%= f.text_field :first_name %>
+  	</div>
+  	
+  	<div>
+  		<%= f.label :Last_name %>&nbsp;<span class="required">*</span><br />
+  		<%= f.text_field :last_name %>
+  	</div>
+  </table>
+  
+  <h3>Contact Information :</h3>
+  <div class="user_edit">
+  	<div>
+  		<%= f.label :phoned %><br />
+  		<%= f.phone_field :phone %>
+  	</div>
+  	
+  	<%= f.fields_for :address do |ff| %>    	
+  	<div>
+  		<%= ff.label :Street_address %>&nbsp;<span class="required">*</span><br />
+  		<%= ff.text_field :street_address %>
+  	</div>
+
+  	<div>
+  		<%= ff.label :City %>&nbsp;<span class="required">*</span><br />
+  		<%= ff.text_field :city %>
+  	</div>
+  	
+  	
+   	<div>
+  		<%= ff.label :Province %>&nbsp;<span class="required">*</span><br />
+  		<%= collection_select(:address, :province_id, @provinces, :id, :name, :prompt => true) %>
+  	</div>
+
+  	<div>
+  		<%= ff.label :Postal_code %>&nbsp;<span class="required">*</span><br />
+  		<%= ff.text_field :postal_code, :size =>6 %>
+  	</div>
+  	<% end %>
+  
+  <br/>
+  
+  <div class="actions">
+    <%= f.submit "Save" %>
+  </div>
+
+<% end %>

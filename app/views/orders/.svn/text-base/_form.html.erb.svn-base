@@ -1,0 +1,106 @@
+<% if current_user and current_user.role_id != 1%>
+  <% if @cart.items.empty? %>
+    <p>Your Cart is empty.</p>
+  <% else %>
+	<p>You are about to checkout <%=pluralize(@cart.items.size, 'item')%>.</p>
+  <%end%>
+
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <!-- populate user info (name and shipping/billing addresses)  -->
+  <%#= f.hidden_field :address_id %><%#= f.hidden_field :used_id %> 
+  <h3>Order Information</h3>
+  <table>
+  	<tr>
+  		<td><%= f.label :order_date, "Order Date:" %></td>
+  		<td><%= f.label :order_date, Date.today.to_s %></td>
+  	</tr>
+  	
+  	<tr>
+  		<td><%= f.label :amount, "Order Total:" %></td>
+  		<td><%= f.label :amount, number_to_currency(@cart.total_price) %></td>
+  	</tr>
+  </table>
+    
+  <h3>Shipping Information</h3>
+  <div>
+  	<%= @user.full_name %>
+  	<%= simple_format(@address.to_s) %>
+  	<%= link_to 'Edit', edit_user_path(@user) %>
+  	
+  </div>
+  
+  <%= f.hidden_field :user_id, {:value => @user.id} %>
+  <%= f.hidden_field :amount, {:value => @cart.total_price} %>
+  <%= f.hidden_field :order_date, {:value => Date.today.to_s} %>
+  <%= f.hidden_field :address_id, {:value => @address.id} %>
+  
+  <h3>Payment Information</h3>
+
+  
+  <br />
+  <div class="actions">
+    <%= f.submit "Place Order" %>
+  </div>
+  
+  <br />
+<% end %>
+
+<% else %>
+
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <!-- populate user info (name and shipping/billing addresses)  -->
+  <%#= f.hidden_field :address_id %><%#= f.hidden_field :used_id %> 
+  <h3>Order Information</h3>
+  <table>
+  	<tr>
+  		<td><%= f.label :order_date, "Order Date: " %></td>
+  		<td><%= f.label :order_date, @order.order_date.to_s %></td>
+  	</tr>
+  	<tr>
+  		<td><%= f.label :amount, "Order Total: " %></td>
+  		<td><%= f.label :amount, number_to_currency(@order.amount) %></td>
+  	</tr>
+  	<tr>
+  		<td><%= f.label :order_status, "Order Status: " %></td>
+  		<td><%= collection_select(:order, :order_status_id, @order_statuses, :id, :status, :prompt => true ) %></td>
+  	</tr>
+  	<tr>
+  		<td><%= f.label :address, "Address: "%></td>
+  		<td><%= f.label :address, Address.find(@order.address_id).to_s %></td>
+  	</tr>
+  	<tr>
+  		<td><%= f.label :ship_date, "Shipment Date:"%></td>
+  		<td><%= f.text_field :ship_date %></td>
+  	</tr>
+  </table>
+  <div class="actions">
+	<%= f.submit %>
+  </div>
+  <br />
+
+<% end %>
+<% end %>

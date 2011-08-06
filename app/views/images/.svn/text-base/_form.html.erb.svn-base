@@ -1,0 +1,27 @@
+<%= form_for(@image, :html => { :multipart => true }) do |f| %>
+  <% if @image.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@image.errors.count, "error") %> prohibited this image from being saved:</h2>
+
+      <ul>
+      <% @image.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	Old Image: <br />
+	<%= image_tag @image.picture.url(:medium)%>
+	<br />	
+	New Image: <br />
+	
+  <div class="field">
+    Picture <br />
+    <%= f.file_field :picture %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

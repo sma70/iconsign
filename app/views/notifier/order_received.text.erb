@@ -1,0 +1,11 @@
+Hi <%= @order.user.first_name%>  <%= @order.user.last_name %>,
+
+You ordered the following items: 
+
+<% @order.items.each do |item| %>
+  <%= item.name %>
+<% end %>
+
+Thank you for your recent order from iConsign Store.
+
+We will send you another email once your payment has been received.

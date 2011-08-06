@@ -1,0 +1,96 @@
+<%content_for :javascript_includes do %>
+  <%= javascript_include_tag "prototype","localstorage"%>
+<% end %>
+
+<%content_for :javascript_includes do %>
+  <%= javascript_include_tag "tag_recom"%>
+<% end %>
+
+<%= form_for(@item, :html => { :multipart => true }) do |f| %>
+<% if @item.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+	<ul>
+		<% @item.errors.full_messages.each do |msg| %>
+		<li>
+			<%= msg %>
+		</li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+
+<div class="item_right">
+	<div>
+		<%= f.label :price %><br />
+		<%= f.text_field :price %>
+	</div>
+	
+	<% if current_user.role_id != nil && current_user.role_id == 1 %>
+	<div>
+		<%= f.label :start_date %><br />
+		<%= f.text_field :start_date %>
+	</div>
+	
+	<div>
+		<%= f.label :expiry_date %><br />
+		<%= f.text_field :expiry_date %>
+	</div>
+	
+	<div>
+		<%= f.label :status %><br />
+		<%= collection_select(:item, :item_status_id, @statuses, :id, :status, {:prompt => true}) %>  
+	</div>
+	<br />
+	<% end %>
+	
+	<div>
+	  <%= f.label 'Tag List (Delimiter = ,)' %><br />
+	  <%= f.text_field :tag_list %>
+	  <div id="rec_list"></div>
+	  <span id="tag_instr">*Click to append recommended tag(s)</span>
+    </div>
+	
+</div>
+
+<div class="item_left">
+	<div>
+		<%= f.label :name %><br />
+		<%= f.text_field :name %>
+	</div>
+	
+	<div class="field">
+		<%= f.label :description %><br />
+		<%= f.text_area :description %>
+	</div>
+	
+	<h3>Images:</h3>
+	<% if @item.images.count > 0 %>
+		<table class="table_display" id="item_add_img" width=350>
+		<% unless @item.images.count == 1 %>
+			<tr><th></th><th>Delete Image<th></tr>
+		<%end%>
+		<!-- Item must have at least one image. <br /> -->
+		<% @item.images.each do |image| %>
+			<tr>
+				<td class="item_img_thumb"><%= image_tag image.picture.url(:thumb) %></td>
+				<% unless @item.images.count == 1 %>
+					<td><%= check_box_tag "image_ids[]", image.id, false, :class => "img_check" %></td>
+				<% end %>
+				
+			</tr>
+		<% end %>
+		</table>
+	<% end %>
+	
+	<div class="item_add_img"><%= add_image(f) %></div>
+	<br />
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+
+</div>
+
+<% end %>
+
